@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var inkomst:Int = 0
-    @State var budget:Int = 0
+    @State var inkomst:Int = 044
+    @State var budget:Int = 3333
     @State var wifi:Int = 0
     @State var mobil:Int = 0
     @State var hyra:Int = 0
@@ -22,10 +22,11 @@ struct ContentView: View {
         NavigationView{
             List{
                 if inkomst > 0 {
-                    Text("din inkomst är                                    \(inkomst)Kr")
+                    Text("din inkomst är                           \(inkomst) Kr")
+                        .padding(.trailing)
                 }
                 if budget > 0 {
-                    Text("din inkomst är                                    \(budget)Kr")
+                    Text("din budget är                                   \(budget)Kr")
                 }
                 if wifi > 0 {
                     Text("din inkomst är                                    \(wifi)Kr")
@@ -45,20 +46,33 @@ struct ContentView: View {
                 
             }
             .sheet(isPresented: $vissaSheet, content: {
-                secondView()
+                secondView(inomst: $inkomst)
             })
             .navigationBarItems(trailing: Button("add"){
                 vissaSheet.toggle()
             })
         }
     }
+    
+    
+    
+    
+    
+    //=================================second view
     struct secondView: View {
         @State var namnList = ["inkomst","budget","hyra","wifi","mobile","försäkring","Sl-Kort"]
-        
+        @Binding var inomst:Int
+        @State var slider:Bool = false
+        @State var sliderValue:Double = 3
         var body: some View{
             VStack{
+                if slider {
+                    Text("\(Int(sliderValue))")
+                    Slider(value: $sliderValue, in: 500...40000,step: 1.0)
+                }
                 Button("add inomst"){
-                    
+                    slider.toggle()
+                    inomst = Int(sliderValue)
                 }
                 .padding()
                 .background(Color.blue)
