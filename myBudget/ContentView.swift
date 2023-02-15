@@ -8,22 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var listan = [String:Int]()
+    @State var listan = [String:String]()
     @State var showSecondView:Bool = false
+    @State var titel:String=""
+    @State var siffran:String=""
+    @State var btPressed:Bool = false
+    
+    
+    
     var body: some View {
-        NavigationView{
-            List{
-                ForEach(listan.sorted(by: >), id: \.key ){ key, value in
-                    Text("\(key)                                \(value) Kr")
+        ZStack {
+            NavigationView{
+                List{
+                    ForEach(listan.sorted(by: >), id: \.key ){ key, value in
+                        Text("\(key)                                \(value)kr")
+                    }
+                    .onDelete(perform: delete)
                 }
-                .onDelete(perform: delete)
+                .sheet(isPresented: $showSecondView, content: {
+                    secondVeiw(titel: $titel, Siffra: $siffran, btPressed: $btPressed)
+                })
+                .navigationBarItems(trailing: Button("add"){
+                    showSecondView.toggle()
+                })
             }
-            .sheet(isPresented: $showSecondView, content: {
-                secondVeiw()
-            })
-            .navigationBarItems(trailing: Button("add"){
-                showSecondView.toggle()
-            })
         }
     }
     //================funktioner===============================
@@ -48,6 +56,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        secondVeiw()
+       // secondVeiw(titel: .constant("xx"), Siffra: .constant("0"))
+        ContentView()
     }
 }
