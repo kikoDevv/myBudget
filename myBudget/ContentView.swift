@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var listan = [String:Int]()
-    
+    @State var showSecondView:Bool = false
     var body: some View {
         NavigationView{
             List{
@@ -18,11 +18,15 @@ struct ContentView: View {
                 }
                 .onDelete(perform: delete)
             }
+            .sheet(isPresented: $showSecondView, content: {
+                secondVeiw()
+            })
             .navigationBarItems(trailing: Button("add"){
-                listan ["budgets"] = 5000
+                showSecondView.toggle()
             })
         }
     }
+    //================funktioner===============================
     func delete(at offsets: IndexSet){
         if let ndx = offsets.first {
             let item = listan.sorted(by: >)[ndx]
@@ -44,6 +48,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        secondVeiw()
     }
 }
