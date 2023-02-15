@@ -8,18 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var dec = [String:Int]()
+    @State var listan = [String:Int]()
     
     var body: some View {
         NavigationView{
             List{
-                ForEach(dec.sorted(by: >), id: \.key ){ key, value in
+                ForEach(listan.sorted(by: >), id: \.key ){ key, value in
                     Text("\(key)                                \(value) Kr")
                 }
+                .onDelete(perform: delete)
             }
             .navigationBarItems(trailing: Button("add"){
-                
+                listan ["budgets"] = 5000
             })
+        }
+    }
+    func delete(at offsets: IndexSet){
+        if let ndx = offsets.first {
+            let item = listan.sorted(by: >)[ndx]
+            listan.removeValue(forKey: item.key)
         }
     }
 }
