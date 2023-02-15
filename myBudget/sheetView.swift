@@ -44,7 +44,7 @@ struct secondVeiw: View {
                         .padding(5)
                 }
                 Button{
-                    //action el bil kostnad
+                    //action bil kostnad
                 }label: {
                     Label("bil kostnad", systemImage: "car")
                         .scaleEffect(1.2)
@@ -56,9 +56,9 @@ struct secondVeiw: View {
             }
             HStack{
                 Button{
-                    //action el bil kostnad
+                    //action wifi
                 }label: {
-                    Label("bil kostnad", systemImage: "car")
+                    Label("wifi", systemImage: "wifi")
                         .scaleEffect(1.2)
                         .frame(width: 150,height: 110)
                         .background(Color.gray.opacity(0.3))
@@ -66,9 +66,9 @@ struct secondVeiw: View {
                         .padding(5)
                 }
                 Button{
-                    //action el bil kostnad
+                    //action wifi
                 }label: {
-                    Label("bil kostnad", systemImage: "car")
+                    Label("mobil", systemImage: "iphone")
                         .scaleEffect(1.2)
                         .frame(width: 150,height: 110)
                         .background(Color.gray.opacity(0.3))
@@ -78,9 +78,9 @@ struct secondVeiw: View {
             }
             HStack{
                 Button{
-                    //action el bil kostnad
+                    //action Sl kort
                 }label: {
-                    Label("bil kostnad", systemImage: "car")
+                    Label("SL-kort", systemImage: "bus")
                         .scaleEffect(1.2)
                         .frame(width: 150,height: 110)
                         .background(Color.gray.opacity(0.3))
@@ -88,38 +88,15 @@ struct secondVeiw: View {
                         .padding(5)
                 }
                 Button{
-                    //action el bil kostnad
+                    //action CSN
                 }label: {
-                    Label("bil kostnad", systemImage: "car")
+                    Label("CSN", systemImage: "graduationcap.fill")
                         .scaleEffect(1.2)
                         .frame(width: 150,height: 110)
                         .background(Color.gray.opacity(0.3))
                         .cornerRadius(20)
                         .padding(5)
                 }
-            }
-            HStack{
-                Button{
-                    //action el bil kostnad
-                }label: {
-                    Label("bil kostnad", systemImage: "car")
-                        .scaleEffect(1.2)
-                        .frame(width: 150,height: 110)
-                        .background(Color.gray.opacity(0.3))
-                        .cornerRadius(20)
-                        .padding(5)
-                }
-                Button{
-                    //action el bil kostnad
-                }label: {
-                    Label("bil kostnad", systemImage: "car")
-                        .scaleEffect(1.2)
-                        .frame(width: 150,height: 110)
-                        .background(Color.gray.opacity(0.3))
-                        .cornerRadius(20)
-                        .padding(5)
-                }
-                
             }
         }
     }
