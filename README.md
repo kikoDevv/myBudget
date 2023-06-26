@@ -1,4 +1,5 @@
 # myBudget
+The app is now available in Ios app store. Appen är ute nu på app Ios appstore för alla användaren som har Ios 14.2 och nyare.
 Ios app för att underläta vardags ekonomy och bättre koll på budget
 
 väldigt bra animerade och enkelt att använda
