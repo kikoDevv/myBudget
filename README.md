@@ -5,8 +5,8 @@ https://apps.apple.com/se/app/mybudget/id6446150580?l=en
 
 
 https://user-images.githubusercontent.com/103362419/221412325-4cba5d5d-65b1-47dd-8f18-2521708b708f.MOV
-Appens struktur är logiskt uppbyggd, vilket minimerar risken för krasch eller buggar.
 
+Appens struktur är logiskt uppbyggd, vilket minimerar risken för krasch eller buggar.
 
 
 https://user-images.githubusercontent.com/103362419/221412683-0ef5493a-1de6-4004-9b14-8a1e63a11cd8.MOV
